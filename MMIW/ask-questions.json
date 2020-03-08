@@ -1,0 +1,49 @@
+{
+	"actions": [
+		{
+			"say": "Okay, I can help you upload this person to our MMIW data-base. "
+		},
+		{
+			"collect": {
+				"name": "store_identity",
+				"questions": [
+					{
+						"question": "What's the persons's first name?",
+						"name": "first_name",
+						"type": "Twilio.FIRST_NAME"
+					},
+					{
+						"question": "What's the persons's last name?",
+						"name": "last_name",
+						"type": "Twilio.LAST_NAME"
+					},
+					{
+						"question": "What's the persons date of birth?",
+						"name": "birth_date",
+						"type": "Twilio.DATE"
+					},
+					{
+						"question": "And, when did they go missing?",
+						"name": "missing_date",
+						"type": "Twilio.TIME"
+					},
+					{
+						"question": "What was the last location, they were seen if possible tell me a city?",
+						"name": "missing_location",
+						"type": "Twilio.City"
+					},
+					{
+						"question": "Is there any informantion, which is important? That I didn't ask for?",
+						"name": "special_requests"
+					}
+				],
+				"on_complete": {
+					"redirect": {
+						"method": "POST",
+						"uri": "https://debt-great-5089.twil.io/deep_table"
+					}
+				}
+			}
+		}
+	]
+}
