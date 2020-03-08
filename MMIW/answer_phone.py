@@ -7,7 +7,6 @@ app = Flask(__name__)
 @app.route("/answer", methods=['GET', 'POST'])
 def answer_call():
     """Respond to incoming phone calls with a brief message."""
-    # Start our TwiML response
     resp = VoiceResponse()
 
     # Read a message aloud to the caller
